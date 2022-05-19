@@ -36,7 +36,7 @@ def remove_word_from_title(monitors):
             if idx == 4: # Final word
                 new_name += key
                 break
-            if idx == 2: # Skip adding APM to the new name
+            if key == "APM":
                 continue
             new_name += key + ' - '
         print(new_name)
