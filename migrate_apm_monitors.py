@@ -31,6 +31,7 @@ with ApiClient(configuration) as api_client:
         create_body = Monitor(
             name=str(insensitive_hotfix.sub('Prod', monitor.name)),
             type=MonitorType('query alert'),
+            options=monitor_response.options, # Necessary for anomaly alerts
             query=str(insensitive_hotfix.sub('prod', monitor.query)),
             message=str(insensitive_hotfix.sub('Prod', monitor_response.message)).replace('@avinashupadhya99@gmail.com', '@avinashupadhya12@gmail.com @avinash@defhacks.co'),
             tags=monitor.tags
